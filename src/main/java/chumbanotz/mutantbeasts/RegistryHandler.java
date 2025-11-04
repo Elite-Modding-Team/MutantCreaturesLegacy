@@ -14,7 +14,9 @@ import chumbanotz.mutantbeasts.item.ChemicalXItem;
 import chumbanotz.mutantbeasts.item.CreeperShardItem;
 import chumbanotz.mutantbeasts.item.EndersoulHandItem;
 import chumbanotz.mutantbeasts.item.HulkHammerItem;
+import chumbanotz.mutantbeasts.item.MBItems;
 import chumbanotz.mutantbeasts.item.MutantSkeletonArmorItem;
+import chumbanotz.mutantbeasts.util.SpecialBrewingRecipe;
 
 import java.util.Iterator;
 
@@ -26,13 +28,19 @@ import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.passive.EntityParrot;
+import net.minecraft.init.Items;
+import net.minecraft.init.PotionTypes;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.potion.PotionUtils;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.storage.loot.LootTableList;
+import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -106,6 +114,18 @@ public class RegistryHandler {
         EntityParrot.registerMimicSound(MutantCreeperEntity.class, SoundEvents.E_PARROT_IM_CREEPER);
         EntityParrot.registerMimicSound(MutantSkeletonEntity.class, SoundEvents.E_PARROT_IM_SKELETON);
         EntityParrot.registerMimicSound(MutantZombieEntity.class, SoundEvents.E_PARROT_IM_ZOMBIE);
+    }
+
+    @SubscribeEvent
+    public static void registerRecipes(RegistryEvent.Register<IRecipe> event) {
+        // Brewing recipes to convert thick potions + boss drops to Chemical X
+        BrewingRecipeRegistry.addRecipe(new SpecialBrewingRecipe(PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.THICK), new ItemStack(MBItems.CREEPER_SHARD), new ItemStack(MBItems.CHEMICAL_X)));
+        BrewingRecipeRegistry.addRecipe(new SpecialBrewingRecipe(PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.THICK), new ItemStack(MBItems.ENDERSOUL_HAND), new ItemStack(MBItems.CHEMICAL_X)));
+        BrewingRecipeRegistry.addRecipe(new SpecialBrewingRecipe(PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.THICK), new ItemStack(MBItems.HULK_HAMMER), new ItemStack(MBItems.CHEMICAL_X)));
+        BrewingRecipeRegistry.addRecipe(new SpecialBrewingRecipe(PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.THICK), new ItemStack(MBItems.MUTANT_SKELETON_BOOTS), new ItemStack(MBItems.CHEMICAL_X)));
+        BrewingRecipeRegistry.addRecipe(new SpecialBrewingRecipe(PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.THICK), new ItemStack(MBItems.MUTANT_SKELETON_CHESTPLATE), new ItemStack(MBItems.CHEMICAL_X)));
+        BrewingRecipeRegistry.addRecipe(new SpecialBrewingRecipe(PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.THICK), new ItemStack(MBItems.MUTANT_SKELETON_LEGGINGS), new ItemStack(MBItems.CHEMICAL_X)));
+        BrewingRecipeRegistry.addRecipe(new SpecialBrewingRecipe(PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.THICK), new ItemStack(MBItems.MUTANT_SKELETON_SKULL), new ItemStack(MBItems.CHEMICAL_X)));
     }
 
     @SubscribeEvent
