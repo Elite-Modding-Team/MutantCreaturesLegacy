@@ -67,7 +67,7 @@ dependencies {
     // }
 
     // Had Enough Items
-    implementation rfg.deobf('curse.maven:had-enough-items-557549:5471944')
+    implementation rfg.deobf('curse.maven:had-enough-items-557549:7282920')
 
     // Just Enough Resources
     implementation rfg.deobf('curse.maven:just-enough-resources-jer-240630:4440936')
