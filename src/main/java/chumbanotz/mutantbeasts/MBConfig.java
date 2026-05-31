@@ -142,6 +142,15 @@ public class MBConfig {
         @Config.Comment("The amount of swim speed the Mutant Creeper has")
         public double mutantCreeperSwimSpeed = 4.5D;
 
+        @Config.Name("Mutant Creeper Underground Spawning")
+        @Config.Comment
+                ({
+                        "Makes the Mutant Creeper spawn anywhere without being restricted to the surface",
+                        "Not recommended unless you know what you're doing"
+                })
+        @Config.RequiresMcRestart
+        public boolean mutantCreeperUndergroundSpawning = false;
+
         @Config.Name("Mutant Enderman Armor")
         @Config.Comment("The amount of armor the Mutant Enderman has")
         public double mutantEndermanArmor = 10.0D;
@@ -237,6 +246,15 @@ public class MBConfig {
         @Config.Name("Mutant Enderman Swim Speed")
         @Config.Comment("The amount of swim speed the Mutant Enderman has")
         public double mutantEndermanSwimSpeed = 1.0D;
+
+        @Config.Name("Mutant Enderman Underground Spawning")
+        @Config.Comment
+                ({
+                        "Makes the Mutant Enderman spawn anywhere without being restricted to the surface",
+                        "Not recommended unless you know what you're doing"
+                })
+        @Config.RequiresMcRestart
+        public boolean mutantEndermanUndergroundSpawning = false;
 
         @Config.Name("Mutant Enderman Water Weakness")
         @Config.Comment("Allows the Mutant Enderman to take damage while in water or when exposed to rain")
@@ -353,6 +371,15 @@ public class MBConfig {
         @Config.Comment("The amount of swim speed the Mutant Skeleton has")
         public double mutantSkeletonSwimSpeed = 5.0D;
 
+        @Config.Name("Mutant Skeleton Underground Spawning")
+        @Config.Comment
+                ({
+                        "Makes the Mutant Skeleton spawn anywhere without being restricted to the surface",
+                        "Not recommended unless you know what you're doing"
+                })
+        @Config.RequiresMcRestart
+        public boolean mutantSkeletonUndergroundSpawning = false;
+
         @Config.Name("Mutant Snow Golem Armor")
         @Config.Comment("The amount of armor the Mutant Snow Golem has")
         public double mutantSnowGolemArmor = 0.0D;
@@ -468,6 +495,15 @@ public class MBConfig {
         @Config.Name("Mutant Zombie Swim Speed")
         @Config.Comment("The amount of swim speed the Mutant Zombie has")
         public double mutantZombieSwimSpeed = 4.0D;
+
+        @Config.Name("Mutant Zombie Underground Spawning")
+        @Config.Comment
+                ({
+                        "Makes the Mutant Creeper spawn anywhere without being restricted to the surface",
+                        "Not recommended unless you know what you're doing"
+                })
+        @Config.RequiresMcRestart
+        public boolean mutantZombieUndergroundSpawning = false;
 
         @Config.Name("Spider-Pig Armor")
         @Config.Comment("The amount of armor the Spider-Pig has")

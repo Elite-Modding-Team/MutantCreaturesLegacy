@@ -1039,7 +1039,8 @@ public class MutantEndermanEntity extends EntityMob implements IEntityAdditional
         } else if (this.world.provider.getDimensionType() == DimensionType.THE_END && this.rand.nextInt(2600) != 0) {
             return false;
         } else {
-            return super.getCanSpawnHere() && this.world.canSeeSky(this.getPosition()) && EntityUtil.getRandomSpawnChance(this.rand);
+            return MBConfig.ENTITIES.mutantEndermanUndergroundSpawning ? super.getCanSpawnHere() && EntityUtil.getRandomSpawnChance(this.rand) :
+                    super.getCanSpawnHere() && this.world.canSeeSky(this.getPosition()) && EntityUtil.getRandomSpawnChance(this.rand);
         }
     }
 

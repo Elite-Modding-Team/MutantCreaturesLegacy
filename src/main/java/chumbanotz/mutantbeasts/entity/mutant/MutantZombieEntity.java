@@ -106,7 +106,8 @@ public class MutantZombieEntity extends EntityMob implements IEntityAdditionalSp
     }
 
     public boolean getCanSpawnHere() {
-        return super.getCanSpawnHere() && this.world.canSeeSky(this.getPosition()) && EntityUtil.getRandomSpawnChance(this.rand);
+        return MBConfig.ENTITIES.mutantZombieUndergroundSpawning ? super.getCanSpawnHere() && EntityUtil.getRandomSpawnChance(this.rand) :
+                super.getCanSpawnHere() && this.world.canSeeSky(this.getPosition()) && EntityUtil.getRandomSpawnChance(this.rand);
     }
 
     protected void entityInit() {

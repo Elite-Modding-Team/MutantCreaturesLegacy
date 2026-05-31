@@ -62,7 +62,8 @@ public class MutantSkeletonEntity extends EntityMob implements IAnimatedEntity {
     }
 
     public boolean getCanSpawnHere() {
-        return super.getCanSpawnHere() && this.world.canSeeSky(this.getPosition()) && EntityUtil.getRandomSpawnChance(this.rand);
+        return MBConfig.ENTITIES.mutantSkeletonUndergroundSpawning ? super.getCanSpawnHere() && EntityUtil.getRandomSpawnChance(this.rand) :
+                super.getCanSpawnHere() && this.world.canSeeSky(this.getPosition()) && EntityUtil.getRandomSpawnChance(this.rand);
     }
 
     protected void initEntityAI() {

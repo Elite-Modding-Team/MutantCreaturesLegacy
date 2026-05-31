@@ -462,7 +462,8 @@ public class MutantCreeperEntity extends EntityCreeper implements IEntityAdditio
     }
 
     public boolean getCanSpawnHere() {
-        return super.getCanSpawnHere() && this.world.canSeeSky(this.getPosition()) && EntityUtil.getRandomSpawnChance(this.rand);
+        return MBConfig.ENTITIES.mutantCreeperUndergroundSpawning ? super.getCanSpawnHere() && EntityUtil.getRandomSpawnChance(this.rand) :
+                super.getCanSpawnHere() && this.world.canSeeSky(this.getPosition()) && EntityUtil.getRandomSpawnChance(this.rand);
     }
 
     class ChargeAttackGoal
