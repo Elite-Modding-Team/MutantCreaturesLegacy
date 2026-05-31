@@ -805,10 +805,6 @@ public class MutantEndermanEntity extends EntityMob implements IEntityAdditional
         }
     }
 
-    public int getTalkInterval() {
-        return 200;
-    }
-
     public void playLivingSound() {
         if (!this.isClone()) {
             super.playLivingSound();
@@ -1188,12 +1184,12 @@ public class MutantEndermanEntity extends EntityMob implements IEntityAdditional
 
         public boolean shouldExecute() {
             this.attackTarget = MutantEndermanEntity.this.getAttackTarget();
-            MutantEndermanEntity.this.livingSoundTime = -MutantEndermanEntity.this.getTalkInterval();
             return MutantEndermanEntity.this.attackID == 3 && this.attackTarget != null;
         }
 
         public void startExecuting() {
             MutantEndermanEntity.this.setAttackID(3);
+            MutantEndermanEntity.this.livingSoundTime = -MutantEndermanEntity.this.getTalkInterval();
             MutantEndermanEntity.this.playSound(MBSoundEvents.ENTITY_MUTANT_ENDERMAN_STARE, 2.5f, 0.7f + MutantEndermanEntity.this.rand.nextFloat() * 0.2f);
         }
 
