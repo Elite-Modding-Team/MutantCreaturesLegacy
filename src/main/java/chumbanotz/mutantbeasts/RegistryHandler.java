@@ -118,6 +118,9 @@ public class RegistryHandler {
 
     @SubscribeEvent
     public static void registerRecipes(RegistryEvent.Register<IRecipe> event) {
+        // Chemical X recipe
+        BrewingRecipeRegistry.addRecipe(new SpecialBrewingRecipe(PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.THICK), new ItemStack(Items.END_CRYSTAL), new ItemStack(MBItems.CHEMICAL_X)));
+
         // Brewing recipes to convert thick potions + boss drops to Chemical X
         BrewingRecipeRegistry.addRecipe(new SpecialBrewingRecipe(PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.THICK), new ItemStack(MBItems.CREEPER_SHARD), new ItemStack(MBItems.CHEMICAL_X)));
         BrewingRecipeRegistry.addRecipe(new SpecialBrewingRecipe(PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.THICK), new ItemStack(MBItems.ENDERSOUL_HAND), new ItemStack(MBItems.CHEMICAL_X)));
