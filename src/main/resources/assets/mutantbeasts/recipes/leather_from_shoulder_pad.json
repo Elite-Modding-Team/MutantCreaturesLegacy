@@ -1,0 +1,12 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "mutantbeasts:mutant_skeleton_shoulder_pad"
+    }
+  ],
+  "result": {
+    "item": "minecraft:leather",
+    "count": 2
+  }
+}

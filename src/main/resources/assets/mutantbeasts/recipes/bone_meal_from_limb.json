@@ -1,0 +1,13 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "mutantbeasts:mutant_skeleton_limb"
+    }
+  ],
+  "result": {
+    "item": "minecraft:dye",
+    "data": 15,
+    "count": 3
+  }
+}
